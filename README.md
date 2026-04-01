@@ -2,7 +2,7 @@
 
 A lightweight, single-page web tool for generating App Store screenshots with a frosted-glass frame.
 
-![App Store Screenshot Generator](image.png)
+![App Store Screenshot Generator](App-Store-Screenshot.png)
 
 ## Live Demo
 

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,15 +11,18 @@
             background-color: #f3f4f6;
             font-family: 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
+
         .canvas-container {
             width: 100%;
-            max-width: 428px; /* 模拟手机屏幕宽度，方便预览 */
+            max-width: 428px;
+            /* 模拟手机屏幕宽度，方便预览 */
             margin: 0 auto;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             background-color: #fff;
         }
+
         canvas {
             width: 100%;
             height: auto;
@@ -27,10 +31,11 @@
         }
     </style>
 </head>
+
 <body class="min-h-screen flex flex-col items-center py-10 px-4">
 
-    <div class="max-w-4xl w-full bg-white rounded-3xl shadow-xl p-8 flex flex-col md:flex-row gap-8">
-        
+    <div class="max-w-5xl w-full bg-white rounded-3xl shadow-xl p-8 flex flex-col md:flex-row gap-8">
+
         <!-- 左侧控制面板 -->
         <div class="flex-1 flex flex-col gap-6">
             <div class="flex justify-between items-start">
@@ -38,8 +43,13 @@
                     <h1 class="text-3xl font-bold text-gray-800 mb-2" data-i18n="title">App Store 海报设计</h1>
                     <p class="text-gray-500 text-sm" id="sizeSubtitle">当前尺寸：1284 × 2778 | 大图屏占比版</p>
                 </div>
-                <button id="langToggleBtn" class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold transition flex items-center text-sm shadow-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
+                <button id="langToggleBtn"
+                    class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold transition flex items-center text-sm shadow-sm">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
+                        </path>
+                    </svg>
                     <span data-i18n="langBtnText">English</span>
                 </button>
             </div>
@@ -47,17 +57,25 @@
             <!-- 文案编辑区 -->
             <div class="bg-gray-50 p-5 rounded-2xl border border-gray-100">
                 <h2 class="font-bold text-gray-700 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
+                    <svg class="w-5 h-5 mr-2 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                        </path>
+                    </svg>
                     <span data-i18n="editCopy">编辑文案 (两行排版)</span>
                 </h2>
                 <div class="space-y-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-600 mb-1" data-i18n="copyTitle">主标题 (第一行)</label>
-                        <input type="text" id="title1" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-lg font-bold">
+                        <label class="block text-sm font-medium text-gray-600 mb-1" data-i18n="copyTitle">主标题
+                            (第一行)</label>
+                        <input type="text" id="title1"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all text-lg font-bold">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-600 mb-1" data-i18n="copySubtitle">副标题 (第二行)</label>
-                        <input type="text" id="subtitle" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
+                        <label class="block text-sm font-medium text-gray-600 mb-1" data-i18n="copySubtitle">副标题
+                            (第二行)</label>
+                        <input type="text" id="subtitle"
+                            class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-all">
                     </div>
                 </div>
             </div>
@@ -65,27 +83,39 @@
             <!-- 图片上传区 -->
             <div class="bg-blue-50 p-5 rounded-2xl border border-blue-100">
                 <h2 class="font-bold text-blue-800 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z">
+                        </path>
+                    </svg>
                     <span data-i18n="uploadLabel">更换截图 (可选)</span>
                 </h2>
-                <input type="file" id="imageInput" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-all cursor-pointer">
+                <input type="file" id="imageInput" accept="image/*"
+                    class="block w-full text-sm text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-600 file:text-white hover:file:bg-blue-700 transition-all cursor-pointer">
                 <p class="text-xs text-blue-600 mt-2" data-i18n="uploadHint">你可以上传你提供的其他截图，快速生成全套海报。</p>
             </div>
 
             <!-- 设备选择区 -->
             <div class="bg-green-50 p-5 rounded-2xl border border-green-100">
                 <h2 class="font-bold text-green-800 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path></svg>
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
                     <span data-i18n="sizeLabel">设置海报尺寸</span>
                 </h2>
                 <div class="grid grid-cols-2 gap-4" id="sizeInputs">
                     <div>
-                        <label class="block text-xs font-medium text-green-700 mb-1" data-i18n="widthLabel">宽度 (Width)</label>
-                        <input type="number" id="posterWidth" value="1284" class="w-full px-3 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all text-sm font-bold text-gray-700">
+                        <label class="block text-xs font-medium text-green-700 mb-1" data-i18n="widthLabel">宽度
+                            (Width)</label>
+                        <input type="number" id="posterWidth" value="1284"
+                            class="w-full px-3 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all text-sm font-bold text-gray-700">
                     </div>
                     <div>
-                        <label class="block text-xs font-medium text-green-700 mb-1" data-i18n="heightLabel">高度 (Height)</label>
-                        <input type="number" id="posterHeight" value="2778" class="w-full px-3 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all text-sm font-bold text-gray-700">
+                        <label class="block text-xs font-medium text-green-700 mb-1" data-i18n="heightLabel">高度
+                            (Height)</label>
+                        <input type="number" id="posterHeight" value="2778"
+                            class="w-full px-3 py-2 border border-green-200 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 outline-none transition-all text-sm font-bold text-gray-700">
                     </div>
                 </div>
             </div>
@@ -93,58 +123,91 @@
             <!-- 背景选择区 -->
             <div class="bg-purple-50 p-5 rounded-2xl border border-purple-100">
                 <h2 class="font-bold text-purple-800 mb-4 flex items-center">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01">
+                        </path>
+                    </svg>
                     <span data-i18n="bgLabel">更换海报背景</span>
                 </h2>
                 <div class="grid grid-cols-2 gap-3" id="bgSelector">
-                    <button data-bg="default" class="bg-option active px-4 py-3 rounded-xl border-2 border-blue-500 bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-indigo-200 mr-2"></span> <span data-i18n="bgDefault">清新蓝紫</span>
+                    <button data-bg="default"
+                        class="bg-option active px-4 py-3 rounded-xl border-2 border-blue-500 bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center shadow-sm">
+                        <span class="w-3 h-3 rounded-full bg-indigo-200 mr-2"></span> <span
+                            data-i18n="bgDefault">清新蓝紫</span>
                     </button>
-                    <button data-bg="minimal" class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-gray-100 border border-gray-300 mr-2"></span> <span data-i18n="bgMinimal">极简纯白</span>
+                    <button data-bg="minimal"
+                        class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
+                        <span class="w-3 h-3 rounded-full bg-gray-100 border border-gray-300 mr-2"></span> <span
+                            data-i18n="bgMinimal">极简纯白</span>
                     </button>
-                    <button data-bg="business" class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-slate-800 mr-2"></span> <span data-i18n="bgBusiness">深邃商务</span>
+                    <button data-bg="business"
+                        class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
+                        <span class="w-3 h-3 rounded-full bg-slate-800 mr-2"></span> <span
+                            data-i18n="bgBusiness">深邃商务</span>
                     </button>
-                    <button data-bg="fancy" class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-gradient-to-r from-pink-400 to-orange-300 mr-2"></span> <span data-i18n="bgFancy">活力渐变</span>
+                    <button data-bg="fancy"
+                        class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
+                        <span class="w-3 h-3 rounded-full bg-gradient-to-r from-pink-400 to-orange-300 mr-2"></span>
+                        <span data-i18n="bgFancy">活力渐变</span>
                     </button>
-                    <button data-bg="neon" class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-purple-600 mr-2 shadow-[0_0_8px_rgba(147,51,234,0.8)]"></span> <span data-i18n="bgNeon">黑客霓虹</span>
+                    <button data-bg="neon"
+                        class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
+                        <span
+                            class="w-3 h-3 rounded-full bg-purple-600 mr-2 shadow-[0_0_8px_rgba(147,51,234,0.8)]"></span>
+                        <span data-i18n="bgNeon">黑客霓虹</span>
                     </button>
-                    <button data-bg="custom" class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
-                        <span class="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-blue-500 mr-2"></span> <span data-i18n="bgCustom">自定义渐变</span>
+                    <button data-bg="custom"
+                        class="bg-option px-4 py-3 rounded-xl border-2 border-transparent bg-white text-gray-800 font-medium transition text-sm flex items-center justify-center hover:shadow-sm">
+                        <span class="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-blue-500 mr-2"></span>
+                        <span data-i18n="bgCustom">自定义渐变</span>
                     </button>
                 </div>
-                
+
                 <!-- 自定义渐变拾色器 (初始隐藏) -->
-                <div id="customColorPicker" class="mt-4 hidden p-4 bg-purple-100/50 rounded-xl border border-purple-100">
+                <div id="customColorPicker"
+                    class="mt-4 hidden p-4 bg-purple-100/50 rounded-xl border border-purple-100">
                     <div class="flex items-center gap-4">
                         <div class="flex-1">
-                            <label class="block text-xs font-medium text-purple-700 mb-1" data-i18n="colorStart">起始颜色</label>
-                            <input type="color" id="gradientStart" value="#4ade80" class="w-full h-8 rounded cursor-pointer border-0">
+                            <label class="block text-xs font-medium text-purple-700 mb-1"
+                                data-i18n="colorStart">起始颜色</label>
+                            <input type="color" id="gradientStart" value="#4ade80"
+                                class="w-full h-8 rounded cursor-pointer border-0">
                         </div>
                         <div class="flex-1">
-                            <label class="block text-xs font-medium text-purple-700 mb-1" data-i18n="colorEnd">终止颜色</label>
-                            <input type="color" id="gradientEnd" value="#3b82f6" class="w-full h-8 rounded cursor-pointer border-0">
+                            <label class="block text-xs font-medium text-purple-700 mb-1"
+                                data-i18n="colorEnd">终止颜色</label>
+                            <input type="color" id="gradientEnd" value="#3b82f6"
+                                class="w-full h-8 rounded cursor-pointer border-0">
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- 下载按钮 -->
-            <button id="downloadBtn" class="mt-auto w-full py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center text-lg">
-                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <button id="downloadBtn"
+                class="mt-auto w-full py-4 bg-gray-900 hover:bg-black text-white font-bold rounded-2xl transition-all shadow-lg hover:shadow-xl flex items-center justify-center text-lg">
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                </svg>
                 <span data-i18n="download">下载高清海报 (PNG)</span>
             </button>
         </div>
 
         <!-- 右侧预览区 -->
         <div class="flex-none flex flex-col items-center">
-            <div class="canvas-container relative">
+            <div class="canvas-container relative mt-4">
                 <div id="loading" class="absolute inset-0 flex items-center justify-center bg-white/90 z-10">
                     <div class="text-center">
-                        <svg class="animate-spin h-8 w-8 text-blue-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <svg class="animate-spin h-8 w-8 text-blue-600 mx-auto mb-2" xmlns="http://www.w3.org/2000/svg"
+                            fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
+                            </circle>
+                            <path class="opacity-75" fill="currentColor"
+                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z">
+                            </path>
+                        </svg>
                         <span class="text-gray-600 font-medium text-sm" data-i18n="rendering">渲染中...</span>
                     </div>
                 </div>
@@ -214,11 +277,11 @@
                 download: 'Download HD Poster (PNG)',
                 rendering: 'Rendering...',
                 previewArea: '↑ Real-time Preview Area ↑',
-                placeholderText: 'Please upload your App screenshot on the left',
+                placeholderText: 'Please upload your App screenshot\non the left',
                 langBtnText: '中文'
             }
         };
-        
+
         let currentLang = navigator.language.startsWith('zh') ? 'zh' : 'en';
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -232,7 +295,7 @@
             // 文本输入框
             const title1Input = document.getElementById('title1');
             const subtitleInput = document.getElementById('subtitle');
-            
+
             // i18n 更新函数
             function updateUIForLanguage() {
                 const t = translations[currentLang];
@@ -242,7 +305,7 @@
                         el.innerText = t[key];
                     }
                 });
-                
+
                 // 如果用户没有修改过默认文案，切换语言时自动翻译占位文案
                 if (Object.values(translations).map(lang => lang.defaultTitle).includes(title1Input.value) || title1Input.value === '') {
                     title1Input.value = t.defaultTitle;
@@ -250,7 +313,7 @@
                 if (Object.values(translations).map(lang => lang.defaultSubtitle).includes(subtitleInput.value) || subtitleInput.value === '') {
                     subtitleInput.value = t.defaultSubtitle;
                 }
-                
+
                 document.title = t.title;
                 render(); // 重新渲染 Canvas 中包含文字的部分
             }
@@ -260,9 +323,8 @@
                 updateUIForLanguage();
             });
 
-            // 初始化文案
-            updateUIForLanguage();
-            
+            // i18n 初始化会在依赖的 DOM 变量完成后执行（见下方）
+
             // 选择器按钮
             const bgOptions = document.querySelectorAll('.bg-option');
             const sizeSubtitle = document.getElementById('sizeSubtitle');
@@ -273,8 +335,13 @@
             const heightInput = document.getElementById('posterHeight');
 
             // 动态设备参数计算
-            const getWidth = () => parseInt(widthInput.value) || 1284;
-            const getHeight = () => parseInt(heightInput.value) || 2778;
+            function getWidth() {
+                return parseInt(widthInput.value) || 1284;
+            }
+
+            function getHeight() {
+                return parseInt(heightInput.value) || 2778;
+            }
 
             const getDeviceConfig = () => {
                 const w = getWidth();
@@ -449,13 +516,13 @@
                         // 使用用户选择的颜色
                         const color1 = document.getElementById('gradientStart').value || '#4ade80';
                         const color2 = document.getElementById('gradientEnd').value || '#3b82f6';
-                        
+
                         const gradient = ctx.createLinearGradient(0, 0, w, h);
                         gradient.addColorStop(0, color1);
                         gradient.addColorStop(1, color2);
                         ctx.fillStyle = gradient;
                         ctx.fillRect(0, 0, w, h);
-                        
+
                         // 可选：增加一点通用反光装饰
                         ctx.save();
                         ctx.beginPath();
@@ -473,7 +540,7 @@
             // 绘制圆角矩形的辅助函数 (改进为平滑连续圆角，去除了之前二次曲线的生硬转折)
             function roundRect(ctx, x, y, width, height, radius) {
                 const r = Math.min(radius, width / 2, height / 2);
-                
+
                 // 首选现代浏览器原生的圆角绘制，渲染最标准平滑
                 if (typeof ctx.roundRect === 'function') {
                     ctx.beginPath();
@@ -485,7 +552,7 @@
                 // 降级：使用标准的三次贝塞尔曲线模拟完美圆角 (Squircle 近似)
                 // 原有的 quadraticCurveTo 会导致折角像切了一个尖锐的圆弧，极度生硬
                 const kappa = 0.5522848; // 完美圆弧控制系数
-                
+
                 ctx.beginPath();
                 ctx.moveTo(x + r, y);
                 ctx.lineTo(x + width - r, y);
@@ -508,44 +575,44 @@
                 const styleConfig = styleConfigs[currentBgStyle];
                 const dConfig = getDeviceConfig();
                 const W = getWidth();
-                
+
                 ctx.textAlign = 'center';
                 const maxWidth = W - (W * 0.15); // 动态边距控制
-                
+
                 // --- 主标题 ---
                 ctx.fillStyle = styleConfig.titleColor;
                 const titleText = title1Input.value;
-                let titleFontSize = dConfig.baseTitleSize; 
+                let titleFontSize = dConfig.baseTitleSize;
                 ctx.font = 'bold ' + titleFontSize + 'px "PingFang SC", "Microsoft YaHei", sans-serif';
-                
+
                 while (ctx.measureText(titleText).width > maxWidth && titleFontSize > 50) {
                     titleFontSize -= 3;
                     ctx.font = 'bold ' + titleFontSize + 'px "PingFang SC", "Microsoft YaHei", sans-serif';
                 }
                 ctx.fillText(titleText, W / 2, dConfig.titleY);
-                
+
                 // --- 副标题 ---
                 const subText = subtitleInput.value;
-                let subFontSize = dConfig.baseSubSize; 
+                let subFontSize = dConfig.baseSubSize;
                 ctx.font = subFontSize + 'px "PingFang SC", "Microsoft YaHei", sans-serif';
-                
+
                 while (ctx.measureText(subText).width > maxWidth - (W * 0.1) && subFontSize > 30) {
                     subFontSize -= 2;
                     ctx.font = subFontSize + 'px "PingFang SC", "Microsoft YaHei", sans-serif';
                 }
-                
+
                 const textWidth = ctx.measureText(subText).width;
-                
+
                 ctx.save();
                 ctx.fillStyle = styleConfig.subtitleBg;
-                
+
                 const rectHeight = subFontSize * 1.6;
                 const rectY = dConfig.subtitleY - rectHeight * 0.72;
                 const rectPadding = W * 0.04; // 动态胶囊内边距
-                
+
                 roundRect(ctx, (W - textWidth) / 2 - rectPadding, rectY, textWidth + rectPadding * 2, rectHeight, rectHeight / 2);
                 ctx.fill();
-                
+
                 ctx.fillStyle = styleConfig.subtitleColor;
                 ctx.fillText(subText, W / 2, dConfig.subtitleY);
                 ctx.restore();
@@ -557,16 +624,16 @@
                 const dConfig = getDeviceConfig();
                 const styleConfig = styleConfigs[currentBgStyle];
                 const t = translations[currentLang];
-                
+
                 // 虚线框占位图
                 ctx.save();
-                const startY = dConfig.frameY; 
+                const startY = dConfig.frameY;
                 const frameW = W * 0.75;
                 const frameH = H - startY - dConfig.marginBottom;
                 const startX = (W - frameW) / 2;
 
                 // 为了带点毛玻璃感，依然给一个半透明底，加上虚线
-                ctx.shadowColor = styleConfig.glassShadow || 'rgba(0, 0, 0, 0.1)'; 
+                ctx.shadowColor = styleConfig.glassShadow || 'rgba(0, 0, 0, 0.1)';
                 ctx.shadowBlur = 40;
                 ctx.shadowOffsetY = 20;
 
@@ -583,13 +650,30 @@
 
                 ctx.setLineDash([]);
                 ctx.fillStyle = styleConfig.subtitleColor || '#64748b';
-                
+
                 // 动态字体大小
+                const lines = String(t.placeholderText || '').split('\n');
                 let fontSize = Math.min(W * 0.04, 60);
-                ctx.font = `bold ${fontSize}px sans-serif`;
                 ctx.textAlign = 'center';
                 ctx.textBaseline = 'middle';
-                ctx.fillText(t.placeholderText, W / 2, startY + frameH / 2);
+
+                // 如果两行里有任意一行太长，自动缩小字号
+                while (fontSize > 24) {
+                    ctx.font = `bold ${fontSize}px sans-serif`;
+                    const maxLineWidth = Math.max(...lines.map(line => ctx.measureText(line).width));
+                    if (maxLineWidth <= frameW * 0.82) break;
+                    fontSize -= 2;
+                }
+
+                ctx.font = `bold ${fontSize}px sans-serif`;
+                const lineHeight = fontSize * 1.35;
+                const centerY = startY + frameH / 2;
+                const totalHeight = (lines.length - 1) * lineHeight;
+                const firstLineY = centerY - totalHeight / 2;
+
+                lines.forEach((line, idx) => {
+                    ctx.fillText(line, W / 2, firstLineY + idx * lineHeight);
+                });
                 ctx.restore();
             }
 
@@ -599,29 +683,29 @@
                 const W = getWidth();
                 const H = getHeight();
 
-                const targetY = dConfig.frameY; 
-                const marginBottom = dConfig.marginBottom; 
-                const maxFrameHeight = H - targetY - marginBottom; 
-                
-                const glassPadding = dConfig.glassPadding; 
+                const targetY = dConfig.frameY;
+                const marginBottom = dConfig.marginBottom;
+                const maxFrameHeight = H - targetY - marginBottom;
+
+                const glassPadding = dConfig.glassPadding;
                 const maxImgHeight = maxFrameHeight - glassPadding * 2;
-                
+
                 const scale = maxImgHeight / img.height;
                 const imgWidth = img.width * scale;
-                const imgHeight = maxImgHeight; 
-                
+                const imgHeight = maxImgHeight;
+
                 const frameWidth = imgWidth + glassPadding * 2;
                 const frameHeight = imgHeight + glassPadding * 2;
-                
+
                 const startX = (W - frameWidth) / 2;
                 const startY = targetY;
 
-                const frameRadius = dConfig.frameRadius; 
-                const screenRadius = dConfig.screenRadius; 
+                const frameRadius = dConfig.frameRadius;
+                const screenRadius = dConfig.screenRadius;
 
                 // 阴影与底色
                 ctx.save();
-                ctx.shadowColor = styleConfig.glassShadow; 
+                ctx.shadowColor = styleConfig.glassShadow;
                 ctx.shadowBlur = 80;
                 ctx.shadowOffsetY = 40;
                 ctx.shadowOffsetX = 0;
@@ -634,10 +718,10 @@
                 ctx.save();
                 ctx.lineWidth = 4;
                 const strokeGradient = ctx.createLinearGradient(startX, startY, startX + frameWidth, startY + frameHeight);
-                strokeGradient.addColorStop(0, styleConfig.glassStroke[0]); 
-                strokeGradient.addColorStop(0.5, styleConfig.glassStroke[1]); 
-                strokeGradient.addColorStop(1, styleConfig.glassStroke[2]); 
-                
+                strokeGradient.addColorStop(0, styleConfig.glassStroke[0]);
+                strokeGradient.addColorStop(0.5, styleConfig.glassStroke[1]);
+                strokeGradient.addColorStop(1, styleConfig.glassStroke[2]);
+
                 ctx.strokeStyle = strokeGradient;
                 roundRect(ctx, startX, startY, frameWidth, frameHeight, frameRadius);
                 ctx.stroke();
@@ -649,29 +733,38 @@
                 const screenY = startY + glassPadding;
 
                 roundRect(ctx, screenX, screenY, imgWidth, imgHeight, screenRadius);
-                ctx.clip(); 
+                ctx.clip();
                 ctx.drawImage(img, screenX, screenY, imgWidth, imgHeight);
                 ctx.restore();
             }
 
             function render() {
                 loading.style.display = 'flex';
-                
+
                 const w = getWidth();
                 const h = getHeight();
                 const t = translations[currentLang];
-                
+
                 sizeSubtitle.innerText = `${t.sizePrefix}${w} × ${h}${t.sizeSuffix}`;
-                
+
                 // 动态更新 Canvas 真实宽高
                 if (canvas.width !== w || canvas.height !== h) {
                     canvas.width = w;
                     canvas.height = h;
                 }
-                
+
                 ctx.clearRect(0, 0, w, h);
                 drawBackground();
                 drawText();
+
+                // 初始未上传截图时，currentImage 没有 src，也不会触发 onload/onerror
+                // 这里直接画占位图并关闭 loading，避免一直卡在“渲染中...”
+                const hasImageSrc = typeof currentImage?.src === 'string' && currentImage.src.trim() !== '';
+                if (!hasImageSrc) {
+                    drawPlaceholder();
+                    loading.style.display = 'none';
+                    return;
+                }
 
                 if (currentImage.complete) {
                     if (currentImage.naturalHeight !== 0) {
@@ -706,15 +799,15 @@
                     const target = e.currentTarget;
                     target.classList.add('active', 'border-blue-500');
                     target.classList.remove('border-transparent');
-                    
+
                     currentBgStyle = target.getAttribute('data-bg');
-                    
+
                     if (currentBgStyle === 'custom') {
                         customColorPicker.classList.remove('hidden');
                     } else {
                         customColorPicker.classList.add('hidden');
                     }
-                    
+
                     render();
                 });
             });
@@ -726,14 +819,15 @@
                     const reader = new FileReader();
                     reader.onload = (event) => {
                         currentImage = new Image();
-                        currentImage.onload = render; 
+                        currentImage.onload = render;
                         currentImage.src = event.target.result;
                     };
                     reader.readAsDataURL(file);
                 }
             });
 
-            render();
+            // 初始化文案（放在 render 定义之后，避免提前触发渲染导致 TDZ 报错）
+            updateUIForLanguage();
 
             downloadBtn.addEventListener('click', () => {
                 const dataURL = canvas.toDataURL('image/png', 1.0);
@@ -748,4 +842,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>App Store 海报生成器 - 毛玻璃质感</title>
+    <title>App Store 截图生成器 - 毛玻璃质感</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -38,13 +38,13 @@
 
         <!-- 左侧控制面板 -->
         <div class="flex-1 flex flex-col gap-6">
-            <div class="flex justify-between items-start">
-                <div>
-                    <h1 class="text-3xl font-bold text-gray-800 mb-2" data-i18n="title">App Store 海报设计</h1>
+            <div class="flex items-start justify-between gap-4">
+                <div class="min-w-0">
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-2 leading-tight truncate" data-i18n="title">App Store 截图设计</h1>
                     <p class="text-gray-500 text-sm" id="sizeSubtitle">当前尺寸：1284 × 2778 | 大图屏占比版</p>
                 </div>
                 <button id="langToggleBtn"
-                    class="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold transition flex items-center text-sm shadow-sm">
+                    class="shrink-0 px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-xl font-bold transition flex items-center text-sm shadow-sm">
                     <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129">
@@ -223,7 +223,7 @@
         // --- 国际化配置 (i18n) ---
         const translations = {
             zh: {
-                title: 'App Store 海报设计',
+                title: 'App Store 截图设计',
                 sizePrefix: '当前尺寸：',
                 sizeSuffix: ' | 大图屏占比版',
                 editCopy: '编辑文案 (两行排版)',
@@ -252,7 +252,7 @@
                 langBtnText: 'English'
             },
             en: {
-                title: 'App Store Poster Design',
+                title: 'App Store Screenshot',
                 sizePrefix: 'Current Size: ',
                 sizeSuffix: ' | Full Screen Ratio',
                 editCopy: 'Edit Copy (Two Lines)',
